@@ -3,44 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina mea personală</title>
+    <meta name="description" content="Pagina personală a Laviniei, pasionată de citit, drumeții și programare.">
+    <title>Lavinia | Pagina personală</title>
+    <style>
+      :root {
+        --ink: #18302b;
+        --muted: #60736e;
+        --mint: #b8e5d5;
+        --mint-dark: #24735f;
+        --cream: #fffaf2;
+        --peach: #f5c9aa;
+        --line: #dce9e2;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--cream);
+        font-family: Georgia, 'Times New Roman', serif;
+        line-height: 1.6;
+      }
+
+      .site-header {
+        padding: 24px 7vw 0;
+        background: linear-gradient(135deg, #e5f5ed 0%, #fffaf2 70%);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      .brand {
+        color: var(--mint-dark);
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: .04em;
+        text-decoration: none;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      nav a { color: var(--ink); text-decoration: none; }
+      nav a:hover, nav a:focus { color: var(--mint-dark); }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.15fr .85fr;
+        gap: 48px;
+        align-items: center;
+        max-width: 1120px;
+        min-height: 520px;
+        margin: auto;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--mint-dark);
+        font: bold .85rem/1.2 Arial, sans-serif;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+
+      h1, h2 { line-height: 1.1; }
+      h1 { max-width: 650px; margin: 0; font-size: clamp(3rem, 7vw, 6.4rem); }
+      .intro { max-width: 560px; margin: 24px 0 30px; color: var(--muted); font-size: 1.2rem; }
+
+      .button {
+        display: inline-block;
+        padding: 12px 20px;
+        border: 2px solid var(--mint-dark);
+        border-radius: 999px;
+        color: #fff;
+        background: var(--mint-dark);
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .button:hover, .button:focus { background: var(--ink); }
+
+      .portrait {
+        position: relative;
+        max-width: 360px;
+        justify-self: end;
+        padding: 18px;
+        background: var(--mint);
+        transform: rotate(2deg);
+      }
+
+      .portrait img { display: block; width: 100%; height: 360px; object-fit: cover; }
+      .portrait figcaption { padding: 10px 0 0; text-align: center; font-style: italic; }
+
+      main { max-width: 1120px; margin: 0 auto; padding: 76px 7vw; }
+      section { scroll-margin-top: 24px; }
+      .section-heading { margin-bottom: 30px; }
+      h2 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3.2rem); }
+      .section-heading p { margin: 0; color: var(--muted); }
+
+      .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 78px; }
+      .panel { padding: 28px; border-top: 4px solid var(--peach); background: #fff; }
+      .panel h3 { margin-top: 0; font-size: 1.35rem; }
+
+      .hobby-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 0 78px; padding: 0; list-style: none; }
+      .hobby-list li { padding: 22px 16px; border: 1px solid var(--line); background: #f1faf5; font-size: 1.1rem; text-align: center; }
+      .hobby-list li::first-letter { color: var(--mint-dark); }
+
+      .study { width: 100%; margin-bottom: 78px; border-collapse: collapse; background: #fff; }
+      .study th, .study td { padding: 15px 18px; border-bottom: 1px solid var(--line); text-align: left; }
+      .study th { color: #fff; background: var(--mint-dark); font-family: Arial, sans-serif; }
+
+      .contact { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+      form { padding: 28px; background: #e5f5ed; }
+      label { display: block; margin-bottom: 6px; font-weight: bold; }
+      input, textarea { width: 100%; padding: 12px; border: 1px solid #abcfc1; border-radius: 4px; font: inherit; }
+      textarea { resize: vertical; }
+      form p { margin: 0 0 18px; }
+      form .button { cursor: pointer; }
+
+      footer { padding: 28px 7vw; color: #fff; background: var(--ink); text-align: center; }
+      footer p { margin: 0; }
+
+      @media (max-width: 700px) {
+        .site-header { padding-top: 16px; }
+        nav { align-items: flex-start; gap: 16px; }
+        nav ul { gap: 10px; flex-wrap: wrap; justify-content: flex-end; font-size: .9rem; }
+        .hero, .about-grid, .contact { grid-template-columns: 1fr; gap: 30px; }
+        .hero { min-height: auto; padding: 72px 0; }
+        .portrait { justify-self: center; }
+        main { padding-top: 56px; }
+        .hobby-list { grid-template-columns: 1fr; }
+        .study th, .study td { padding: 12px 10px; }
+      }
+    </style>
 </head>
 <body>
-    <header>
-  <h1>Pagina mea personală</h1>
-  <p>Bună! Sunt Lavinia și învăț HTML.</p>
-</header>
+  <header class="site-header">
+    <nav aria-label="Navigare principală">
+      <a class="brand" href="#acasa">Lavinia.</a>
+      <ul>
+        <li><a href="#despre">Despre mine</a></li>
+        <li><a href="#hobby-uri">Hobby-uri</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero" id="acasa">
+      <div>
+        <p class="eyebrow">Bun venit în spațiul meu</p>
+        <h1>Învăț, descopăr și creez.</h1>
+        <p class="intro">Bună! Sunt Lavinia, o persoană curioasă care transformă fiecare zi într-o ocazie de a învăța ceva nou.</p>
+        <a class="button" href="#despre">Cunoaște-mă</a>
+      </div>
+      <figure class="portrait">
+        <img src="verde.mentă.jpg" alt="O imagine în nuanțe de verde mentă">
+        <figcaption>Verde mentă, culoarea mea preferată</figcaption>
+      </figure>
+    </div>
+  </header>
 <main>
-  <section>
-    <h2>Despre mine</h2>
-    <img src="verde.mentă.jpg" alt="Culoarea mea preferată" width="250" />
-    <figcaption>
-    Aceasta este culoarea mea preferată: verde mentă.
-  </figcaption>
+  <section id="despre">
+    <div class="section-heading">
+      <p class="eyebrow">Câteva lucruri despre mine</p>
+      <h2>Despre mine</h2>
+    </div>
+    <div class="about-grid">
+      <article class="panel">
+        <h3>Îmi place să cresc</h3>
+        <p>Învăț HTML și CSS pas cu pas, exersez prin proiecte mici și mă bucur de fiecare progres. Pentru mine, programarea este un mod creativ de a pune ideile în practică.</p>
+      </article>
+      <article class="panel">
+        <h3>Îmi place să explorez</h3>
+        <p>Cititul și drumețiile îmi oferă inspirație, liniște și perspective noi. Încerc să păstrez mereu loc pentru curiozitate și lucrurile care mă surprind.</p>
+      </article>
+    </div>
   </section>
-  <section>
-  <h2>Hobby-urile mele</h2>
-  <ul>
+
+  <section id="hobby-uri">
+  <div class="section-heading">
+    <p class="eyebrow">Lucrurile care îmi dau energie</p>
+    <h2>Hobby-urile mele</h2>
+  </div>
+  <ul class="hobby-list">
     <li>Cititul</li>
     <li>Drumețiile</li>
-    <li>Învățarea programării :D</li>
+    <li>Învățarea programării</li>
   </ul>
 </section>
+
 <section>
-  <h2>Site-ul meu preferat</h2>
+  <div class="section-heading">
+    <p class="eyebrow">O resursă utilă</p>
+    <h2>Site-ul meu preferat</h2>
+  </div>
   <p>
     Îmi place să învăț de pe
     <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>.
   </p>
 </section>
 <section>
-  <h2>Programul meu de studiu</h2>
+  <div class="section-heading">
+    <p class="eyebrow">Un ritm care funcționează pentru mine</p>
+    <h2>Programul meu de studiu</h2>
+  </div>
 
-  <table>
+  <table class="study">
+    <thead>
     <tr>
       <th>Zi</th>
       <th>Activitate</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <td>Luni</td>
       <td>Învăț HTML</td>
@@ -53,10 +238,16 @@
       <td>Vineri</td>
       <td>Repet lecțiile</td>
     </tr>
+    </tbody>
   </table>
 </section>
-<section>
-  <h2>Contact</h2>
+
+<section class="contact" id="contact">
+  <div class="section-heading">
+    <p class="eyebrow">Hai să vorbim</p>
+    <h2>Contact</h2>
+    <p>Ai o recomandare de carte, o idee de drumeție sau vrei să discutăm despre programare? Scrie-mi.</p>
+  </div>
 
   <form>
     <p>
@@ -74,12 +265,12 @@
       <textarea id="mesaj" name="mesaj" rows="5" cols="30"></textarea>
     </p>
 
-    <button type="submit">Trimite</button>
+    <button class="button" type="submit">Trimite mesajul</button>
   </form>
 </section>
 </main>
 <footer>
-  <p>2026 Lavinia</p>
+  <p>&copy; 2026 Lavinia. Creat cu răbdare și curiozitate.</p>
 </footer>
 </body>
 </html>
