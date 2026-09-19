@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina mea personală</title>
+    <link rel="stylesheet" href="exercitiu.css" />
 </head>
 <body>
     <header>
-  <h1>Pagina mea personală</h1>
-  <p>Bună! Sunt Lavinia și învăț HTML.</p>
+  <h1><strong>Pagina mea personală</strong></h1>
+  <p class="descriere"><em>Bună! Sunt Lavinia și învăț HTML.</em></p>
 </header>
 <main>
   <section>
@@ -21,14 +22,14 @@
   <section>
   <h2>Hobby-urile mele</h2>
   <ul>
-    <li>Cititul</li>
-    <li>Drumețiile</li>
-    <li>Învățarea programării :D</li>
+    <li class="descriere">Cititul</li>
+    <li class="descriere">Drumețiile</li>
+    <li class="descriere">Învățarea programării :D</li>
   </ul>
 </section>
 <section>
   <h2>Site-ul meu preferat</h2>
-  <p>
+  <p class="descriere">
     Îmi place să învăț de pe
     <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>.
   </p>
@@ -37,10 +38,13 @@
   <h2>Programul meu de studiu</h2>
 
   <table>
+    <thead>
     <tr>
       <th>Zi</th>
       <th>Activitate</th>
     </tr>
+</thead>
+<tbody>
     <tr>
       <td>Luni</td>
       <td>Învăț HTML</td>
@@ -53,6 +57,7 @@
       <td>Vineri</td>
       <td>Repet lecțiile</td>
     </tr>
+    </tbody>
   </table>
 </section>
 <section>
